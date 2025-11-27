@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GIS</title>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <!-- Search & Basemap -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ===========================
+           NAVBAR FINAL
+    ============================ -->
+    <nav class="navbar">
+        <div class="nav-title">WebGIS Perokok Indonesia</div>
+
+        <ul class="nav-menu">
+            <li><a href="#top">Beranda</a></li>
+            <li><a href="#map">Peta</a></li>
+            <li><a href="#statistik">Statistik</a></li>
+            <li><a href="#searchSection">Cari Provinsi</a></li>
+
+    <li class="dropdown">
+        <a href="#">Download ▼</a>
+        <div class="dropdown-content">
+            <a href="data/data.geojson" download>
+                <span class="icon">📥</span> Unduh GeoJSON
+            </a>
+            <a href="data.csv" download>
+                <span class="icon">📄</span> Unduh CSV Nasional
+            </a>
+        </div>
+    </li>
+
+            <li><a href="#meta">Tentang</a></li>
+            <li><a href="#" id="themeToggle">🌙 Mode Gelap</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- HEADER -->
+    <header id="top">
+        <h1>Monitoring Persentase Perokok di Provinsi Indonesia</h1>
+        <p>Sumber Data: BPS – 2023</p>
+    </header>
+
+
+    <!-- DASHBOARD -->
+    <section class="dashboard">
+        <div class="box">
+            <h2 id="avgTotal">0%</h2>
+            <p>Rata-rata Provinsi</p>
+        </div>
+
+        <div class="box">
+            <h2 id="highestKab">-</h2>
+            <p>Persentase Tertinggi</p>
+        </div>
+
+        <div class="box">
+            <h2 id="lowestKab">-</h2>
+            <p>Persentase Terendah</p>
+        </div>
+
+        <div id="searchSection" class="search-container">
+            <input type="text" id="searchInput" placeholder="Cari Provinsi...">
+            <button id="searchBtn">Cari</button>
+        </div>
+
+        <div id="resultBox" class="result-box"></div>
+    </section>
